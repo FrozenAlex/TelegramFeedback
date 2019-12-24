@@ -55,8 +55,6 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
 router.post('/'+ webhookPath, async (ctx, next) => {
     await bot.handleUpdate(ctx.request.body, ctx.response)
     ctx.status = 200
-  
-    // ctx.router available
 });
 
 
@@ -64,8 +62,8 @@ bot.launch()
 
 
 // Set webhook if you don't need anything else
-if (appURI != "") {
-    console.log(`Setting webhook with address ${appURI}{} `)
+if (appURI !== "") {
+    console.log(`Setting webhook with address ${appURI}`)
     bot.telegram.setWebhook(appURI+webhookPath)
 }
 
