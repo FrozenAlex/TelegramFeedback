@@ -70,6 +70,7 @@ if (appURI !== "") {
 app
   .use(router.routes())
   .use(router.allowedMethods())
+  .use(require('koa-static')("./public", {maxAge:60*60*24, gzip: true}))
   .listen(port)
 
 console.log(`App is listening on port ${port}`)
