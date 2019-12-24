@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start": "node app.js",
-    "install": "yarn install"
+    "start": "node app.js"
   },
   "dependencies": {
     "koa": "^2.11.0",
