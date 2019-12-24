@@ -7,7 +7,6 @@ const fs = require('fs')
 // Import telegraf
 const Telegraf = require('telegraf') 
 const extra = require('telegraf/extra')
-const markup = extra.markdown()
 
 // Temporary configs
 const botToken = process.env.BOT_TOKEN || ""
@@ -51,7 +50,7 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
         ctx.status = 200
     }
     ctx.status = 404
-}, markup);
+});
 
 router.post('/'+ webhookPath, async (ctx, next) => {
     await bot.handleUpdate(ctx.request.body, ctx.response)
