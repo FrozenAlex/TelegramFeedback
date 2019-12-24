@@ -6,7 +6,7 @@ const fs = require('fs')
 
 // Import telegraf
 const Telegraf = require('telegraf') 
-const extra = require('telegraf/extra')
+
 
 // Temporary configs
 const botToken = process.env.BOT_TOKEN || ""
