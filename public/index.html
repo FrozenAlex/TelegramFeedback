@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Very Simple feedback page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/css/emoji.css" rel="stylesheet">
 </head>
 <body>
     <form action="/" method="post">
@@ -18,12 +20,21 @@
                 id="text"
                 cols="30"
                 rows="10"
-                placeholder="Write your message"></textarea>
+                placeholder="Write your message"
+                data-emojiable="true"></textarea>
         <br>
         <input type="submit" value="Send">
         </div>
         
       </form>
+       <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="lib/js/config.js"></script>
+  <script src="lib/js/util.js"></script>
+  <script src="lib/js/jquery.emojiarea.js"></script>
+  <script src="lib/js/emoji-picker.js"></script>
 </body>
 <style>
     #logo{
