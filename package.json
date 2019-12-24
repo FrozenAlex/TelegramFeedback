@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "node app.js",
+    "install": "yarn install"
+  },
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "telegraf": "^3.34.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "13.5.0",
+    "yarn": "1.21.1"
+  }
+}
