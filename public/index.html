@@ -8,16 +8,57 @@
 </head>
 <body>
     <form action="/" method="post">
-        Name/Email/Contact: <br><input type="text" name="name" placeholder="Name" value="Anonimous"><br>
-        Your message <br> <textarea name="message" id="text" cols="30" rows="10" placeholder="Write your message"></textarea>
+
+        <div id="logo"><h1>Simple Contact Form</h1></div>
+        <div class="container centered">
+            <h3>Name/Email/Contact:</h3>
+            <input type="text" name="name" placeholder="Name" value="Anonimous">
+            <h3>Your message:</h3>
+            <textarea name="message"
+                id="text"
+                cols="30"
+                rows="10"
+                placeholder="Write your message"></textarea>
         <br>
         <input type="submit" value="Send">
+        </div>
+        
       </form>
 </body>
 <style>
-    textarea {
-        max-width: 700px;
+    #logo{
+        width:100%;
+        text-align: center;
+
     }
-    
+    .centered {
+        text-align: center;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 </style>
 </html>
