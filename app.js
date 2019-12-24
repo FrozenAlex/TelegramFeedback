@@ -36,7 +36,6 @@ router.get('/', async (ctx, next) => {
 });
 
 router.post('/', async (ctx, next) => {
-    console.log(ctx.request.body);
     if(ctx.request.body.message){
         let currentDate = new Date();
         bot.telegram.sendMessage(adminID, `
@@ -63,7 +62,7 @@ bot.launch()
 
 // Set webhook if you don't need anything else
 if (appURI !== "") {
-    console.log(`Setting webhook with address ${appURI}`)
+    console.log(`Setting webhook with address ${appURI+webhookPath}`)
     bot.telegram.setWebhook(appURI+webhookPath)
 }
 
