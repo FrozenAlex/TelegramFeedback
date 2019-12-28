@@ -31,10 +31,7 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 var router = new Router();
 
 router.get('/', async (ctx, next) => {
-    ctx.response.headers = {
-        ...ctx.response.headers,
-        "Access-Control-Allow-Origin": "*"
-    }
+    ctx.res.setHeader("Access-Control-Allow-Origin","*")
     ctx.response.type = 'html';
     ctx.response.body = fs.createReadStream('./public/index.html');
     ctx.status = 200
