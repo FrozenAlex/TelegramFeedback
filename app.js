@@ -37,6 +37,10 @@ router.get('/', async (ctx, next) => {
 });
 
 router.post('/', async (ctx, next) => {
+    ctx.header = {
+        ...ctx.header,
+        "Access-Control-Allow-Origin": "*"
+    }
     if(ctx.request.body.message){
         let currentDate = new Date();
         bot.telegram.sendMessage(adminID, `
@@ -50,6 +54,33 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
         ctx.status = 200
     }
     ctx.status = 404
+});
+
+
+router.post('/cors', async (ctx, next) => {
+    ctx.header = {
+        ...ctx.header,
+        "Access-Control-Allow-Origin": "*"
+    }
+
+    if(ctx.request.body.message){
+        let currentDate = new Date();
+        await bot.telegram.sendMessage(adminID, `
+${ctx.request.body.message}
+${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
+    { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
+    ))}/ ${currentDate.toLocaleTimeString("ru")}
+        `)
+        ctx.response.type = 'json';
+        ctx.response = JSON.stringify({
+            done: "yes"
+        });
+        ctx.status = 200
+    }
+    ctx.header = {
+        "Access-Control-Allow-Origin": "*"
+    }
+    ctx.status = 403
 });
 
 router.post('/'+ webhookPath, async (ctx, next) => {
