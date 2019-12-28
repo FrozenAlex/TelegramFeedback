@@ -31,8 +31,8 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 var router = new Router();
 
 router.get('/', async (ctx, next) => {
-    ctx.header = {
-        ...ctx.header,
+    ctx.response.headers = {
+        ...ctx.response.headers,
         "Access-Control-Allow-Origin": "*"
     }
     ctx.response.type = 'html';
@@ -41,8 +41,8 @@ router.get('/', async (ctx, next) => {
 });
 
 router.post('/', async (ctx, next) => {
-    ctx.header = {
-        ...ctx.header,
+    ctx.response.headers = {
+        ...ctx.response.headers,
         "Access-Control-Allow-Origin": "*"
     }
     if(ctx.request.body.message){
@@ -62,8 +62,8 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
 
 
 router.post('/cors', async (ctx, next) => {
-    ctx.header = {
-        ...ctx.header,
+    ctx.response.headers = {
+        ...ctx.response.headers,
         "Access-Control-Allow-Origin": "*"
     }
 
@@ -81,9 +81,7 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
         });
         ctx.status = 200
     }
-    ctx.header = {
-        "Access-Control-Allow-Origin": "*"
-    }
+    
     ctx.status = 403
 });
 
