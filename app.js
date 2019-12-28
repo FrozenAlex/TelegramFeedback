@@ -33,14 +33,14 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 var router = new Router();
 
 router.get('/', async (ctx, next) => {
-    ctx.res.setHeader("Access-Control-Allow-Origin","*")
+
     ctx.response.type = 'html';
     ctx.response.body = fs.createReadStream('./public/index.html');
     ctx.status = 200
 });
 
 router.post('/', async (ctx, next) => {
-    ctx.res.setHeader("Access-Control-Allow-Origin","*")
+
     if(ctx.request.body.message){
         let currentDate = new Date();
         bot.telegram.sendMessage(adminID, `
@@ -58,8 +58,6 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
 
 
 router.post('/cors', async (ctx, next) => {
-    ctx.res.setHeader("Access-Control-Allow-Origin","*")
-
     if(ctx.request.body.message){
         let currentDate = new Date();
         await bot.telegram.sendMessage(adminID, `
