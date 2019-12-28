@@ -1,3 +1,6 @@
+// Import configs
+require('dotenv').config()
+
 // Import koa
 const Koa = require('koa')
 const cors = require('@koa/cors');
