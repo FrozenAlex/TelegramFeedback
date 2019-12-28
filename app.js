@@ -1,5 +1,6 @@
 // Import koa
 const Koa = require('koa')
+const cors = require('@koa/cors');
 const Router= require('koa-router')
 const bodyParser= require('koa-bodyparser')
 const fs = require('fs')
@@ -16,6 +17,7 @@ const webhookPath = process.env.WEBHOOK_PATH
 const adminID = process.env.ADMIN_ID 
 
 var app = new Koa();
+app.use(cors());
 app.use(bodyParser());
 
 // Set up telegraf
