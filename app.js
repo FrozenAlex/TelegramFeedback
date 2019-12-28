@@ -38,10 +38,7 @@ router.get('/', async (ctx, next) => {
 });
 
 router.post('/', async (ctx, next) => {
-    ctx.response.headers = {
-        ...ctx.response.headers,
-        "Access-Control-Allow-Origin": "*"
-    }
+    ctx.res.setHeader("Access-Control-Allow-Origin","*")
     if(ctx.request.body.message){
         let currentDate = new Date();
         bot.telegram.sendMessage(adminID, `
@@ -59,10 +56,7 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
 
 
 router.post('/cors', async (ctx, next) => {
-    ctx.response.headers = {
-        ...ctx.response.headers,
-        "Access-Control-Allow-Origin": "*"
-    }
+    ctx.res.setHeader("Access-Control-Allow-Origin","*")
 
     if(ctx.request.body.message){
         let currentDate = new Date();
@@ -78,7 +72,9 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
         });
         ctx.status = 200
     }
-    
+    ctx.response = JSON.stringify({
+        done: "no"
+    });
     ctx.status = 403
 });
 
