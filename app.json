@@ -21,8 +21,10 @@
             "generator": "secret"
         },
         "ADMIN_ID": {
-            "ADMIN_ID": "Your chat ID. You can edit this later. To get it send /start command to the bot",
-            "value": ""
+            "description": "Your chat ID. You can edit this later. To get it send /start command to the bot",
+            "value": "",
+            "required":false
         }
-    }
+    },
+    "success_url": "/"
 }

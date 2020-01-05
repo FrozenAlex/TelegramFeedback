@@ -1,6 +1,5 @@
 # Simple Telegram Feedback bot [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/FrozenAlex/TelegramFeedback)
 
-
 ## Enviroment variables
 
 For the app to work first you need to set enviroment variables.
