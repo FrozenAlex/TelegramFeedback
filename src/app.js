@@ -60,27 +60,6 @@ ${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
 });
 
 
-router.post('/cors', async (ctx, next) => {
-    if(ctx.request.body.message){
-        let currentDate = new Date();
-        await bot.telegram.sendMessage(adminID, `
-${ctx.request.body.message}
-${ctx.request.body.name || "Anonimous"} ${(currentDate.toLocaleDateString("ru",
-    { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }
-    ))}/ ${currentDate.toLocaleTimeString("ru")}
-        `)
-        ctx.response.type = 'json';
-        ctx.response = JSON.stringify({
-            done: "yes"
-        });
-        ctx.status = 200
-    }
-    ctx.response = JSON.stringify({
-        done: "no"
-    });
-    ctx.status = 403
-});
-
 router.post('/'+ webhookPath, async (ctx, next) => {
     await bot.handleUpdate(ctx.request.body, ctx.response)
     ctx.status = 200
