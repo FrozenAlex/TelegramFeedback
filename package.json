@@ -2,23 +2,20 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "concurrently 'yarn start' 'yarn browsersync'",
-    "browsersync":"browser-sync start --files \"public/**/*.*\" --proxy localhost:8080 "
+    "browsersync": "browser-sync start --proxy localhost:8080 --files \"public/**/*.*\" \"templates/**/*.*\""
   },
   "dependencies": {
     "@koa/cors": "2",
     "browser-sync": "^2.26.7",
     "concurrently": "^5.0.2",
     "dotenv": "^8.2.0",
-    "knex": "^0.20.7",
     "koa": "^2.11.0",
-    "koa-bodyparser": "^4.2.1",
+    "koa-body": "^4.1.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
-    "mysql2": "^2.1.0",
-    "purgecss": "^1.4.2",
-    "sqlite3": "^4.1.1",
-    "telegraf": "^3.34.1",
-    "typescript": "^3.7.4"
+    "mkdirp": "^0.5.1",
+    "pug": "^2.0.4",
+    "telegraf": "^3.34.1"
   },
   "license": "MIT",
   "engines": {
