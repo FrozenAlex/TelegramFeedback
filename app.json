@@ -1,30 +1,29 @@
 {
-    "name": "Simple Telegram Feedback bot",
-    "description": "A barebones Feedback bot using Koa and telegraf",
-    "repository": "https://github.com/FrozenAlex/TelegramFeedback",
-    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-    "keywords": ["node", "koa", "heroku", "telegram"],
-    "image": "heroku/nodejs",
-    "env": {
-
-        "APP_URL": {
-            "description": "Your app url without trailing /",
-            "value": "https://yourappname.herokuapp.com"
-        },
-        "BOT_TOKEN": {
-            "description": "Bot token you can get it from @BotFather",
-            "value": "",
-            "required": true
-        },
-        "WEBHOOK_PATH": {
-            "description": "A secret path for telegram to contact the bot",
-            "generator": "secret"
-        },
-        "ADMIN_ID": {
-            "description": "Your chat ID. You can edit this later. To get it send /start command to the bot",
-            "value": "",
-            "required":false
-        }
+  "name": "Simple Telegram Feedback bot",
+  "description": "A barebones Feedback bot using Koa and telegraf",
+  "repository": "https://github.com/FrozenAlex/TelegramFeedback",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "koa", "heroku", "telegram"],
+  "image": "heroku/nodejs",
+  "env": {
+    "APP_URL": {
+      "description": "Your app url without trailing /",
+      "value": "https://yourappname.herokuapp.com"
     },
-    "success_url": "/"
+    "BOT_TOKEN": {
+      "description": "Bot token you can get it from @BotFather",
+      "value": "",
+      "required": true
+    },
+    "WEBHOOK_PATH": {
+      "description": "A secret path for telegram to contact the bot",
+      "generator": "secret"
+    },
+    "ADMIN_ID": {
+      "description": "Your chat ID. You can edit this later. To get it send /start command to the bot",
+      "value": "",
+      "required": false
+    }
+  },
+  "success_url": "/"
 }
