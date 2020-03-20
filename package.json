@@ -9,19 +9,19 @@
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
-    "koa-router": "^7.4.0",
+    "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.3",
     "pug": "^2.0.4",
-    "telegraf": "^3.35.0"
+    "telegraf": "^3.36.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "concurrently": "^5.0.2"
+    "concurrently": "^5.1.0"
   },
   "license": "MIT",
   "engines": {
-    "node": "^13.5.0",
-    "yarn": "^1.21.1"
+    "node": "^13.11.0",
+    "yarn": "^1.22.4"
   }
 }
