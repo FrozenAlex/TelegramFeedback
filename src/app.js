@@ -83,7 +83,7 @@ router.post("/", async (ctx, next) => {
       )
 
       // check if the user sent us a file
-      if (ctx.request.files.file.name !== "") {
+      if (ctx.request.files.file) {
         await bot.telegram.sendDocument(adminID, {
           source: fs.createReadStream(ctx.request.files.file.path),
           filename: ctx.request.files.file.name,
@@ -138,7 +138,7 @@ router.post("/api", async (ctx, next) => {
       )
 
       // check if the user sent us a file
-      if (ctx.request.files.file.name !== "") {
+      if (ctx.request.files.file) {
         await bot.telegram.sendDocument(adminID, {
           source: fs.createReadStream(ctx.request.files.file.path),
           filename: ctx.request.files.file.name,
