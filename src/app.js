@@ -83,7 +83,7 @@ router.post("/", async (ctx, next) => {
       )
 
       // check if the user sent us a file
-      if (ctx.request.files.file) {
+      if (ctx.request.files.file && (ctx.request.files.file.name != "")) {
         await bot.telegram.sendDocument(adminID, {
           source: fs.createReadStream(ctx.request.files.file.path),
           filename: ctx.request.files.file.name,
@@ -124,7 +124,7 @@ router.post("/", async (ctx, next) => {
       cache: process.env.NODE_ENV == "production",
       message: {
         type: "error",
-        text: "No name/message provided"
+        text: "No name/message provided",
       },
     })
     ctx.status = 500
@@ -149,7 +149,7 @@ router.post("/api", async (ctx, next) => {
       )
 
       // check if the user sent us a file
-      if (ctx.request.files.file) {
+      if (ctx.request.files.file && (ctx.request.files.file.name != "")) {
         await bot.telegram.sendDocument(adminID, {
           source: fs.createReadStream(ctx.request.files.file.path),
           filename: ctx.request.files.file.name,
