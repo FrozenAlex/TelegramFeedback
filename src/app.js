@@ -113,10 +113,21 @@ router.post("/", async (ctx, next) => {
         })
         ctx.response.status = 500
       } catch (err) {
+        ctx.response.type = "html"
         ctx.response.body = `<html><body>${JSON.stringify(err)}</body>`
         ctx.status = 500
       }
     }
+  } else {
+    ctx.response.type = "html"
+    ctx.response.body = pug.renderFile("templates/index.pug", {
+      cache: process.env.NODE_ENV == "production",
+      message: {
+        type: "error",
+        text: "No name/message provided"
+      },
+    })
+    ctx.status = 500
   }
 })
 
@@ -158,8 +169,15 @@ router.post("/api", async (ctx, next) => {
             ? JSON.stringify(err)
             : Error.getErrorMessage(err.code),
       })
-      ctx.response.status = 500
+      ctx.status = 500
     }
+  } else {
+    ctx.response.type = "json"
+    ctx.response.body = JSON.stringify({
+      type: "error",
+      text: "No name/message provided",
+    })
+    ctx.status = 500
   }
 })
 
