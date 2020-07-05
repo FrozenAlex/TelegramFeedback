@@ -36,7 +36,10 @@ const webhookPath = process.env.WEBHOOK_PATH
 const adminID = process.env.ADMIN_ID
 
 var app = new Koa()
-app.use(cors())
+app.use(cors({
+  allowMethods: "POST",
+  origin: "https://alexx.ml" // Allow CORS only from this origin
+}))
 
 // Handle errors
 app.use(async (ctx, next) => {
