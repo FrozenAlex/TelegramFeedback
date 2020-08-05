@@ -1,0 +1,55 @@
+build
+dist
+node_modules
+.env
+yarn.lock
+LICENSE.md
+
+# Client
+client/dist
+.browserslistrc
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+.dockerignore
+sample.env
+.gitignore
+.prettierignore
+docker-compose.yml.sample
+settings.json.sample
+
+# Database Files
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite.sqbpro
+*.sqlite-journal
+*.sql
+*.sqbpro
+
+# Image
+*.png
+*.jpg
+robots.txt
+*.ico
+*.svg
+*.jpeg
+
+# Yarn 2 Files
+.pnp.js
+*.zip
+*.gz

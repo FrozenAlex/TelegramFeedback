@@ -1,6 +1,6 @@
 {
-  "name": "Simple Telegram Feedback bot",
-  "description": "A barebones Feedback bot using Koa and telegraf",
+  "name": "Telegram Feedback bot",
+  "description": "Feedback bot using Koa and telegraf",
   "repository": "https://github.com/FrozenAlex/TelegramFeedback",
   "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
   "keywords": ["node", "koa", "heroku", "telegram"],

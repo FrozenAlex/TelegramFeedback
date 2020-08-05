@@ -1,0 +1,10 @@
+.env
+**/node_modules/
+tmp/
+.vscode/
+.git/
+misc/
+**/dist/
+build/
+docker-compose.yml
+yarn-error.log

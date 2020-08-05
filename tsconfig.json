@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+      "outDir": "dist",
+      "sourceMap": true,
+      "module": "CommonJS",
+      "moduleResolution": "node",
       "lib": [ "ES2015", "ES2015.Promise" ]
     }
-  }
+}

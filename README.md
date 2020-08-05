@@ -10,6 +10,10 @@ List of possible enviroment variables
     APP_URL="https://app.url"
     BOT_TOKEN="BotTokenFromTelegram"
     WEBHOOK_PATH="whatcomesaftertheslash"
+    # Field names
+    MESSAGE_FIELD="message"
+    NAME_FIELD="username"
+    UNREAL_FIELD="name"
 ```
 
 Variables APP_URL and WEBHOOK_PATH can be left empty if you don't have a domain name or if you are developing the app.
