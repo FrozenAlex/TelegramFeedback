@@ -18,7 +18,8 @@ COPY package*.json ./
 COPY yarn.lock ./
 
 RUN yarn install --production && \
-	yarn cache clean
+	yarn cache clean && \
+	rm /app/node_modules/@types -rf
 COPY --from=build-stage /app/locales/ /app/locales/
 COPY --from=build-stage /app/dist/ /app/dist/
 
