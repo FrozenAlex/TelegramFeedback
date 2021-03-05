@@ -98,6 +98,9 @@ bot.help((ctx) =>
 );
 
 bot.on("sticker", (ctx) => ctx.reply("👍"));
+bot.help((ctx)=> {
+  ctx.reply(`This is a private telegram bot, your id is ${ctx.message.from.id}`);
+});
 bot.hears("hi", (ctx) => ctx.reply("Hey there"));
 
 var router = new Router();
